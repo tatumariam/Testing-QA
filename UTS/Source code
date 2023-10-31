@@ -1,1 +1,24 @@
+import unittest
 
+# Fungsi yang akan diuji
+def hitung_kuadrat(bilangan):
+    if bilangan >= 0:
+        return bilangan * bilangan
+    else:
+        return "Bilangan negatif"
+
+class TestKuadrat(unittest.TestCase):
+    def test_kuadrat_bilangan_positif(self):
+        hasil = hitung_kuadrat(5)
+        self.assertEqual(hasil, 25)
+
+    def test_kuadrat_bilangan_negatif(self):
+        hasil = hitung_kuadrat(-4)
+        self.assertEqual(hasil, "Bilangan negatif")
+
+    def test_kuadrat_nol(self):
+        hasil = hitung_kuadrat(0)
+        self.assertEqual(hasil, 0)
+
+if _name_ == '_main_':
+    unittest.main()
